@@ -1,24 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://8moja7ciw0ev"]
+[gd_scene load_steps=3 format=3 uid="uid://gofe16hg3pwk"]
 
 [ext_resource type="PackedScene" uid="uid://d3ili2tgj8hn6" path="res://Scenes/Player.tscn" id="1_yddaq"]
-
-[sub_resource type="PlaneMesh" id="1"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_j14cw"]
+[ext_resource type="MeshLibrary" uid="uid://27k4jdg4hg5a" path="res://MeshLibraries/TestMeshLibrary.tres" id="2_j66pi"]
 
 [node name="Node3D" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.5, 0, 1, -2.18557e-08, 0, 0.5, -1)
-mesh = SubResource("PlaneMesh_j14cw")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
-transform = Transform3D(-4.37114e-08, 1, -2.18557e-08, 0, -4.37114e-08, -0.5, -1, -4.37114e-08, 9.55343e-16, -1, 0.5, 0)
-mesh = SubResource("PlaneMesh_j14cw")
-skeleton = NodePath("../MeshInstance3D")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 4, 3.125, 4)
@@ -31,3 +16,11 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.25, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.946294, 0.281035, 0.159832, -0.313191, 0.919527, 0.237446, -0.0802391, -0.274752, 0.958161, 0, 0, 0)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_j66pi")
+cell_size = Vector3(1, 1, 1)
+data = {
+"cells": PackedInt32Array(0, 65534, 524288, 65535, 65534, 524288, 65534, 65535, 524288, 65534, 0, 524288, -1, 0, 524288, -65536, 0, 524288, -65536, 65535, 524288, -1, 65535, 524288, 131070, 0, 524288, 131070, 65535, 524288, 131071, 65534, 524288, 65536, 65534, 524288)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
