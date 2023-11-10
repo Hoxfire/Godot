@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://8moja7ciw0ev"]
+[gd_scene load_steps=4 format=3 uid="uid://8moja7ciw0ev"]
+
+[ext_resource type="PackedScene" uid="uid://d3ili2tgj8hn6" path="res://Scenes/Player.tscn" id="1_yddaq"]
 
 [sub_resource type="PlaneMesh" id="1"]
 
@@ -21,4 +23,11 @@ skeleton = NodePath("../MeshInstance3D")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 4, 3.125, 4)
 projection = 1
+current = true
 size = 2.5
+
+[node name="Player" parent="." instance=ExtResource("1_yddaq")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.25, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.946294, 0.281035, 0.159832, -0.313191, 0.919527, 0.237446, -0.0802391, -0.274752, 0.958161, 0, 0, 0)

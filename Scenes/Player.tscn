@@ -1,12 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3ili2tgj8hn6"]
+[gd_scene load_steps=5 format=3 uid="uid://d3ili2tgj8hn6"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_y2d43"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvycw"]
 albedo_color = Color(1, 0, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_33f7l"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_f1asp"]
+
 [node name="Player" type="Node3D"]
+script = ExtResource("1_y2d43")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_uvycw")
 mesh = SubResource("CapsuleMesh_33f7l")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.475606, 0, 0)
+mesh = SubResource("BoxMesh_f1asp")
